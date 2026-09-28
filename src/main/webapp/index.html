@@ -154,7 +154,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Desktop Nav Links (Pure Fashion & Consumer Categories) */
+        /* Desktop Nav Links */
         .desktop-nav-links {
             display: none;
             list-style: none;
@@ -183,7 +183,7 @@
             border-bottom-color: var(--primary);
         }
 
-        /* Search Bar in Header */
+        /* Desktop Search */
         .desktop-search-container {
             display: none;
             flex: 1;
@@ -401,11 +401,11 @@
             .mobile-search-section { display: none; }
         }
 
-        /* Hero Banner (Myntra / Ajio aesthetic) */
+        /* Hero Banner */
         .hero-banner {
             border-radius: var(--radius-lg);
             overflow: hidden;
-            margin: 16px 0 24px;
+            margin: 16px 0 20px;
             background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
             color: white;
             padding: 32px 24px;
@@ -416,7 +416,7 @@
             position: relative;
         }
         @media (max-width: 600px) {
-            .hero-banner { padding: 24px 16px; }
+            .hero-banner { padding: 22px 16px; }
             .hero-banner-decor { display: none; }
         }
         .hero-badge-tag {
@@ -429,22 +429,22 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-block;
-            margin-bottom: 12px;
-        }
-        .hero-heading {
-            font-size: 28px;
-            font-weight: 900;
-            line-height: 1.15;
             margin-bottom: 10px;
         }
+        .hero-heading {
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
         @media (min-width: 768px) {
-            .hero-heading { font-size: 38px; }
+            .hero-heading { font-size: 36px; }
         }
         .hero-subtext {
-            font-size: 14px;
+            font-size: 13px;
             opacity: 0.9;
-            margin-bottom: 18px;
-            max-width: 500px;
+            margin-bottom: 16px;
+            max-width: 520px;
         }
         .hero-cta-btn {
             background: #ffffff;
@@ -463,13 +463,13 @@
             color: #ffffff;
         }
 
-        /* Horizontal Category Chips */
+        /* Category Chips Bar */
         .category-scroll-container {
             display: flex;
             gap: 8px;
             overflow-x: auto;
             white-space: nowrap;
-            padding: 8px 0 16px;
+            padding: 6px 0 14px;
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
         }
@@ -497,15 +497,42 @@
             box-shadow: 0 2px 8px rgba(255, 63, 108, 0.25);
         }
 
-        /* 2-Column Mobile Product Grid (Responsive) */
+        /* Filter Pills (Price Range & Brands) */
+        .filters-toolbar {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 12px;
+            scrollbar-width: none;
+        }
+        .filters-toolbar::-webkit-scrollbar { display: none; }
+        .filter-btn {
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn.active {
+            background: var(--dark);
+            color: #ffffff;
+            border-color: var(--dark);
+        }
+
+        /* 2-Column Mobile Product Grid */
         .catalog-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 16px 0 14px;
+            margin: 12px 0 14px;
         }
         .catalog-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -524,13 +551,13 @@
         @media (min-width: 768px) {
             .product-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
+                gap: 18px;
             }
         }
         @media (min-width: 1024px) {
             .product-grid {
                 grid-template-columns: repeat(4, 1fr);
-                gap: 24px;
+                gap: 22px;
             }
         }
 
@@ -594,6 +621,22 @@
             background: #ffffff;
         }
 
+        .badge-flair {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--dark);
+            color: white;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 3px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .badge-flair.hot { background: #ff5722; }
+        .badge-flair.nykaa { background: var(--nykaa-pink); }
+
         .discount-badge-ribbon {
             position: absolute;
             bottom: 8px;
@@ -604,6 +647,20 @@
             font-weight: 800;
             padding: 3px 7px;
             border-radius: 3px;
+        }
+
+        .rating-star-tag {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(255,255,255,0.92);
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            gap: 2px;
         }
 
         .product-body {
@@ -836,7 +893,7 @@
         .modal-container {
             background: white;
             border-radius: var(--radius-lg);
-            max-width: 700px;
+            max-width: 720px;
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
@@ -918,7 +975,7 @@
 
     <!-- Top Announcement Bar -->
     <div class="top-banner">
-        <span>⚡ BIG FASHION FESTIVAL: UP TO 70% OFF ON TOP BRANDS</span>
+        <span>⚡ BIG FASHION FESTIVAL: UP TO 70% OFF ON 27+ TOP BRANDS</span>
         <span>&bull;</span>
         <span>Sale Ends in: <span id="flashTimer" class="countdown-timer">05:42:19</span></span>
         <span>&bull;</span>
@@ -928,7 +985,6 @@
     <!-- Header / Navbar -->
     <header class="site-header">
         <div class="container navbar-content">
-            <!-- Mobile Menu Toggle Button -->
             <button class="mobile-menu-btn" onclick="toggleDrawer(true)">☰</button>
 
             <!-- Brand Logo -->
@@ -936,7 +992,7 @@
                 TRENDVIBE<span class="accent">.</span> <span class="badge-tag">MYNTRA &bull; NYKAA</span>
             </div>
 
-            <!-- Desktop Nav Links (Pure Fashion Storefront) -->
+            <!-- Desktop Nav Links -->
             <ul class="desktop-nav-links">
                 <li><a onclick="filterByGender('Men', this)" id="desk-men">MEN</a></li>
                 <li><a onclick="filterByGender('Women', this)" id="desk-women">WOMEN</a></li>
@@ -949,25 +1005,22 @@
             <!-- Desktop Search Bar -->
             <div class="desktop-search-container">
                 <svg class="search-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <input type="text" class="search-input-field" placeholder="Search for brands, shirts, dresses, lipsticks..." onkeyup="handleSearch(this.value)">
+                <input type="text" class="search-input-field" placeholder="Search 27+ brands, shirts, dresses, lipsticks..." onkeyup="handleSearch(this.value)">
             </div>
 
             <!-- Right Actions -->
             <div class="nav-actions">
-                <!-- User Profile Dropdown Icon -->
                 <button class="action-icon-btn" onclick="switchView('orders')">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                     <span>Profile</span>
                 </button>
 
-                <!-- Wishlist Icon -->
                 <button class="action-icon-btn" onclick="switchView('wishlist')">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                     <span>Wishlist</span>
                     <span id="wishlist-badge" class="badge-counter" style="display: none;">0</span>
                 </button>
 
-                <!-- Bag / Cart Icon -->
                 <button class="action-icon-btn" onclick="switchView('cart')">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
                     <span>Bag</span>
@@ -983,26 +1036,26 @@
             <div class="drawer-header">
                 <button class="drawer-close" onclick="toggleDrawer(false)">✕</button>
                 <div style="font-size: 18px; font-weight: 900;">TRENDVIBE FASHION</div>
-                <div style="font-size: 12px; opacity: 0.9;">Welcome to India's Premier Store</div>
+                <div style="font-size: 12px; opacity: 0.9;">India's Luxury Lifestyle Destination</div>
             </div>
             <div class="drawer-body">
                 <div class="drawer-item" onclick="switchView('shop'); filterByGender('All'); toggleDrawer(false);">
-                    🔥 All Trending Collections
+                    🔥 All 27 Trending Styles
                 </div>
                 <div class="drawer-item" onclick="switchView('shop'); filterByGender('Men'); toggleDrawer(false);">
-                    👔 Men's Fashion &amp; Casuals
+                    👔 Men's Store (Shirts, Jeans, T-Shirts)
                 </div>
                 <div class="drawer-item" onclick="switchView('shop'); filterByGender('Women'); toggleDrawer(false);">
-                    👗 Women's Ethnic &amp; Western
+                    👗 Women's Ethnic &amp; Western Dresses
                 </div>
                 <div class="drawer-item" onclick="switchView('shop'); filterCategory('Beauty'); toggleDrawer(false);" style="color: var(--nykaa-pink);">
-                    💄 Nykaa Beauty &amp; Skincare
+                    💄 Nykaa Beauty &amp; Luxury Skincare
                 </div>
                 <div class="drawer-item" onclick="switchView('shop'); filterCategory('Shoes'); toggleDrawer(false);">
-                    👟 Footwear &amp; Sneakers
+                    👟 Footwear &amp; Sneakers (Nike &bull; Puma &bull; Adidas)
                 </div>
                 <div class="drawer-item" onclick="switchView('shop'); filterCategory('Watches'); toggleDrawer(false);">
-                    ⌚ Luxury Watches &amp; Accessories
+                    ⌚ Watches &amp; Accessories (Fossil &bull; Titan &bull; Ray-Ban)
                 </div>
                 <div class="drawer-divider"></div>
                 <div class="drawer-item" onclick="switchView('wishlist'); toggleDrawer(false);">
@@ -1018,7 +1071,7 @@
         </div>
     </div>
 
-    <!-- Mobile Bottom App Navigation Bar (Clean Consumer App Feel) -->
+    <!-- Mobile Bottom App Navigation Bar -->
     <nav class="bottom-nav">
         <button id="bnav-shop" class="bottom-nav-item active" onclick="switchView('shop')">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
@@ -1042,12 +1095,12 @@
         </button>
     </nav>
 
-    <!-- Mobile Search Section (Only on Mobile) -->
+    <!-- Mobile Search Section -->
     <div class="mobile-search-section">
         <div class="container">
             <div style="position: relative;">
                 <svg class="search-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                <input type="text" class="search-input-field" placeholder="Search brands, shirts, dresses, lipsticks..." onkeyup="handleSearch(this.value)">
+                <input type="text" class="search-input-field" placeholder="Search 27+ brands, shirts, dresses, lipsticks..." onkeyup="handleSearch(this.value)">
             </div>
         </div>
     </div>
@@ -1063,7 +1116,7 @@
                     <span class="hero-badge-tag">Festive Mega Drop</span>
                     <h1 class="hero-heading">BIG FASHION &amp; BEAUTY FESTIVAL</h1>
                     <p class="hero-subtext">
-                        Explore handpicked styles from Roadster, Mango, Nike, Puma, and authentic Nykaa luxury cosmetics.
+                        Shop 27+ exclusive collections from Roadster, Tommy Hilfiger, Levi's, Mango, Nike, Puma, Adidas &amp; Nykaa.
                     </p>
                     <a href="#productGrid" class="hero-cta-btn">Shop The Drop &rarr;</a>
                 </div>
@@ -1072,29 +1125,39 @@
                 </div>
             </div>
 
-            <!-- Horizontal Swipeable Category Chips -->
+            <!-- Horizontal Category Chips -->
             <div class="category-scroll-container">
-                <button class="cat-chip active" onclick="filterCategory('All', this)">🔥 All Fashion</button>
+                <button class="cat-chip active" onclick="filterCategory('All', this)">🔥 All 27 Styles</button>
                 <button class="cat-chip" onclick="filterCategory('Shirts', this)">👔 Shirts</button>
                 <button class="cat-chip" onclick="filterCategory('T-Shirts', this)">👕 T-Shirts</button>
                 <button class="cat-chip" onclick="filterCategory('Dresses', this)">👗 Dresses &amp; Ethnic</button>
                 <button class="cat-chip" onclick="filterCategory('Beauty', this)">💄 Nykaa Beauty</button>
                 <button class="cat-chip" onclick="filterCategory('Shoes', this)">👟 Footwear</button>
-                <button class="cat-chip" onclick="filterCategory('Watches', this)">⌚ Watches</button>
+                <button class="cat-chip" onclick="filterCategory('Watches', this)">⌚ Watches &amp; Luxury</button>
+            </div>
+
+            <!-- Secondary Filters Toolbar (Price Range) -->
+            <div class="filters-toolbar">
+                <span style="font-size: 11px; font-weight: 800; color: var(--text-muted); align-self: center; margin-right: 4px;">PRICE:</span>
+                <button class="filter-btn active" onclick="filterPrice('All', this)">All Prices</button>
+                <button class="filter-btn" onclick="filterPrice('under999', this)">Under &#8377;999</button>
+                <button class="filter-btn" onclick="filterPrice('1000to2500', this)">&#8377;1,000 - &#8377;2,500</button>
+                <button class="filter-btn" onclick="filterPrice('above2500', this)">&#8377;2,500+</button>
             </div>
 
             <!-- Catalog Header with Sort Dropdown -->
             <div class="catalog-header">
                 <div>
                     <h2 id="catalogTitle" class="catalog-title">All Clothing &amp; Beauty</h2>
-                    <span id="catalogCount" style="font-size: 11px; color: var(--text-muted); font-weight: 700;">12 styles found</span>
+                    <span id="catalogCount" style="font-size: 11px; color: var(--text-muted); font-weight: 700;">27 styles found</span>
                 </div>
                 <div>
                     <select id="sortSelect" onchange="handleSort(this.value)" style="padding: 7px 12px; border-radius: 6px; border: 1px solid var(--border); font-size: 12px; font-weight: 700; background: white; outline: none; cursor: pointer;">
-                        <option value="featured">Recommended</option>
+                        <option value="featured">Sort: Recommended</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
                         <option value="discount">Highest Discount</option>
+                        <option value="rating">Highest Rated</option>
                     </select>
                 </div>
             </div>
@@ -1151,9 +1214,9 @@
             <div class="footer-col">
                 <h4>ONLINE SHOPPING</h4>
                 <ul>
-                    <li><a href="#" onclick="filterByGender('Men')">Men's Fashion</a></li>
+                    <li><a href="#" onclick="filterByGender('Men')">Men's Fashion &amp; Formals</a></li>
                     <li><a href="#" onclick="filterByGender('Women')">Women's Ethnic &amp; Western</a></li>
-                    <li><a href="#" onclick="filterCategory('Beauty')">Nykaa Beauty &amp; Cosmetics</a></li>
+                    <li><a href="#" onclick="filterCategory('Beauty')">Nykaa Beauty &amp; Luxury Skincare</a></li>
                     <li><a href="#" onclick="filterCategory('Shoes')">Footwear &amp; Sneakers</a></li>
                     <li><a href="#" onclick="filterCategory('Watches')">Luxury Watches &amp; Accessories</a></li>
                 </ul>
@@ -1183,9 +1246,10 @@
         </div>
     </footer>
 
-    <!-- CLIENT APPLICATION LOGIC -->
+    <!-- CLIENT APPLICATION LOGIC (27 Products & Consumer Features) -->
     <script>
         let products = [
+            // MEN FASHION
             {
                 id: 1,
                 name: "Roadster Men Slim Fit Pure Cotton Casual Shirt",
@@ -1197,6 +1261,7 @@
                 discountPercent: 40,
                 rating: 4.8,
                 reviewsCount: 1420,
+                badge: "BESTSELLER",
                 sizes: ["S", "M", "L", "XL"],
                 imageUrl: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",
                 description: "Olive green slim fit pure cotton casual shirt. Has a spread collar, long sleeves, curved hem, and one patch pocket. 100% breathable."
@@ -1212,6 +1277,7 @@
                 discountPercent: 35,
                 rating: 4.6,
                 reviewsCount: 890,
+                badge: "TRENDING",
                 sizes: ["30", "32", "34", "36"],
                 imageUrl: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
                 description: "Dark blue washed 5-pocket mid-rise stretch denim jeans, clean look with light fade."
@@ -1227,12 +1293,79 @@
                 discountPercent: 25,
                 rating: 4.7,
                 reviewsCount: 650,
+                badge: "NEW DROP",
                 sizes: ["S", "M", "L", "XL"],
                 imageUrl: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
                 description: "Navy blue and white printed T-shirt, round neck, bio-washed for ultra softness."
             },
             {
                 id: 4,
+                name: "Tommy Hilfiger Classic Oxford Cotton Shirt",
+                brand: "TOMMY HILFIGER",
+                category: "Shirts",
+                gender: "Men",
+                price: 2799,
+                originalPrice: 3999,
+                discountPercent: 30,
+                rating: 4.9,
+                reviewsCount: 520,
+                badge: "PREMIUM",
+                sizes: ["39", "40", "42", "44"],
+                imageUrl: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
+                description: "Classic button-down collar Oxford shirt in sky blue with signature embroidered flag on chest."
+            },
+            {
+                id: 5,
+                name: "Levi's 511 Slim Fit Raw Indigo Denim Jeans",
+                brand: "LEVI'S",
+                category: "Pants",
+                gender: "Men",
+                price: 2999,
+                originalPrice: 3799,
+                discountPercent: 20,
+                rating: 4.9,
+                reviewsCount: 2100,
+                badge: "ICONIC",
+                sizes: ["30", "32", "34", "36"],
+                imageUrl: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=800&q=80",
+                description: "Authentic Levi's 511 slim fit stretch denim in dark indigo with trademark red tab on back pocket."
+            },
+            {
+                id: 6,
+                name: "HRX Activewear Dry-Fit Breathable Joggers",
+                brand: "HRX",
+                category: "Pants",
+                gender: "Men",
+                price: 989,
+                originalPrice: 1799,
+                discountPercent: 45,
+                rating: 4.6,
+                reviewsCount: 780,
+                badge: "SPORTS",
+                sizes: ["S", "M", "L", "XL"],
+                imageUrl: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=800&q=80",
+                description: "Athletic training joggers with moisture-wicking technology and reflective side tape."
+            },
+            {
+                id: 7,
+                name: "Dennis Lingo Casual Corduroy Overshirt",
+                brand: "DENNIS LINGO",
+                category: "Shirts",
+                gender: "Men",
+                price: 1199,
+                originalPrice: 2399,
+                discountPercent: 50,
+                rating: 4.7,
+                reviewsCount: 340,
+                badge: "TRENDING",
+                sizes: ["M", "L", "XL"],
+                imageUrl: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=800&q=80",
+                description: "Rich camel brown corduroy jacket shirt, relaxed drop shoulder with twin chest flap pockets."
+            },
+
+            // WOMEN FASHION
+            {
+                id: 8,
                 name: "Anouk Embroidered Anarkali Kurta Set",
                 brand: "ANOUK",
                 category: "Dresses",
@@ -1242,12 +1375,13 @@
                 discountPercent: 50,
                 rating: 4.9,
                 reviewsCount: 2310,
+                badge: "BESTSELLER",
                 sizes: ["XS", "S", "M", "L", "XL"],
                 imageUrl: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
                 description: "Burgundy and gold embroidered Anarkali kurta with trousers and organza dupatta."
             },
             {
-                id: 5,
+                id: 9,
                 name: "MANGO Floral Print Fit & Flare Midi Dress",
                 brand: "MANGO",
                 category: "Dresses",
@@ -1257,12 +1391,13 @@
                 discountPercent: 30,
                 rating: 4.7,
                 reviewsCount: 420,
+                badge: "HOT",
                 sizes: ["S", "M", "L"],
                 imageUrl: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80",
                 description: "Sage green floral print midi dress, sweetheart neckline and puff sleeves."
             },
             {
-                id: 6,
+                id: 10,
                 name: "Libas Pink Straight Kurta with Palazzos",
                 brand: "LIBAS",
                 category: "Dresses",
@@ -1272,12 +1407,79 @@
                 discountPercent: 45,
                 rating: 4.8,
                 reviewsCount: 1890,
+                badge: "ETHNIC",
                 sizes: ["S", "M", "L"],
                 imageUrl: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
                 description: "Dusty pink straight calf-length kurta with keyhole neck, paired with palazzos."
             },
             {
-                id: 7,
+                id: 11,
+                name: "Biba Block Printed Tiered Anarkali Gown",
+                brand: "BIBA",
+                category: "Dresses",
+                gender: "Women",
+                price: 2999,
+                originalPrice: 4999,
+                discountPercent: 40,
+                rating: 4.9,
+                reviewsCount: 880,
+                badge: "FESTIVE",
+                sizes: ["S", "M", "L", "XL"],
+                imageUrl: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+                description: "Royal teal blue block-printed floor-length Anarkali gown with gota patti borders and sequin yoke."
+            },
+            {
+                id: 12,
+                name: "H&M Ribbed High-Neck Knit Bodycon Dress",
+                brand: "H&M",
+                category: "Dresses",
+                gender: "Women",
+                price: 1499,
+                originalPrice: 1999,
+                discountPercent: 25,
+                rating: 4.7,
+                reviewsCount: 620,
+                badge: "WESTERN",
+                sizes: ["XS", "S", "M", "L"],
+                imageUrl: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",
+                description: "Soft black ribbed knit midi dress with side slit, high turtle neckline, and long sleeves."
+            },
+            {
+                id: 13,
+                name: "FabIndia Handloom Chanderi Silk Saree",
+                brand: "FABINDIA",
+                category: "Dresses",
+                gender: "Women",
+                price: 4549,
+                originalPrice: 6999,
+                discountPercent: 35,
+                rating: 5.0,
+                reviewsCount: 310,
+                badge: "LUXURY",
+                sizes: ["Free Size"],
+                imageUrl: "https://images.unsplash.com/photo-1610030469668-935cb7462002?auto=format&fit=crop&w=800&q=80",
+                description: "Traditional magenta and golden zari handloom Chanderi silk saree with matching blouse piece."
+            },
+            {
+                id: 14,
+                name: "Vero Moda Women Pleated Satin Party Blouse",
+                brand: "VERO MODA",
+                category: "Shirts",
+                gender: "Women",
+                price: 1399,
+                originalPrice: 1999,
+                discountPercent: 30,
+                rating: 4.6,
+                reviewsCount: 290,
+                badge: "PARTY",
+                sizes: ["XS", "S", "M"],
+                imageUrl: "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&w=800&q=80",
+                description: "Emerald green cowl neck sleeveless satin top with delicate pleats and button closure."
+            },
+
+            // NYKAA BEAUTY & COSMETICS
+            {
+                id: 15,
                 name: "Nykaa Matte to Last! Liquid Lipstick - Chai",
                 brand: "NYKAA COSMETICS",
                 category: "Beauty",
@@ -1287,12 +1489,13 @@
                 discountPercent: 20,
                 rating: 4.9,
                 reviewsCount: 5120,
+                badge: "NYKAA HIT",
                 sizes: ["4.2 ml"],
                 imageUrl: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=80",
                 description: "Transfer-proof, 12-hour ultra-lightweight matte liquid lipstick infused with Vitamin E."
             },
             {
-                id: 8,
+                id: 16,
                 name: "The Ordinary Niacinamide 10% + Zinc 1% Serum",
                 brand: "THE ORDINARY",
                 category: "Beauty",
@@ -1302,57 +1505,13 @@
                 discountPercent: 15,
                 rating: 4.9,
                 reviewsCount: 4200,
+                badge: "SKINCARE",
                 sizes: ["30 ml", "60 ml"],
                 imageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80",
                 description: "High-strength vitamin and mineral blemish formula. Reduces pore congestion."
             },
             {
-                id: 9,
-                name: "Nike Air Max SC Leather Running Sneakers",
-                brand: "NIKE",
-                category: "Shoes",
-                gender: "Men",
-                price: 4799,
-                originalPrice: 5995,
-                discountPercent: 20,
-                rating: 4.9,
-                reviewsCount: 940,
-                sizes: ["UK 7", "UK 8", "UK 9", "UK 10"],
-                imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
-                description: "White and royal blue track style sneakers with visible Air cushioning."
-            },
-            {
-                id: 10,
-                name: "Puma Men Black & White Smash V2 Low-Tops",
-                brand: "PUMA",
-                category: "Shoes",
-                gender: "Men",
-                price: 2399,
-                originalPrice: 3999,
-                discountPercent: 40,
-                rating: 4.7,
-                reviewsCount: 1120,
-                sizes: ["UK 7", "UK 8", "UK 9"],
-                imageUrl: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80",
-                description: "Classic tennis silhouette in soft black suede with signature Puma formstrip."
-            },
-            {
-                id: 11,
-                name: "Fossil Men Chronograph Black Leather Watch",
-                brand: "FOSSIL",
-                category: "Watches",
-                gender: "Men",
-                price: 7699,
-                originalPrice: 10999,
-                discountPercent: 30,
-                rating: 4.8,
-                reviewsCount: 450,
-                sizes: ["Standard 44mm"],
-                imageUrl: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-                description: "Gunmetal stainless steel case with genuine black leather strap. 50m water resistance."
-            },
-            {
-                id: 12,
+                id: 17,
                 name: "Forest Essentials 24K Gold Radiance Cream",
                 brand: "FOREST ESSENTIALS",
                 category: "Beauty",
@@ -1362,20 +1521,186 @@
                 discountPercent: 10,
                 rating: 5.0,
                 reviewsCount: 310,
+                badge: "AYURVEDIC",
                 sizes: ["50 gm"],
                 imageUrl: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
                 description: "Ayurvedic anti-aging day cream infused with 24K pure gold bhasma and saffron."
+            },
+            {
+                id: 18,
+                name: "Kay Beauty 24H Waterproof Matte HD Liquid Eyeliner",
+                brand: "KAY BEAUTY",
+                category: "Beauty",
+                gender: "Women",
+                price: 674,
+                originalPrice: 899,
+                discountPercent: 25,
+                rating: 4.8,
+                reviewsCount: 1640,
+                badge: "KATRINA KAIF",
+                sizes: ["3.5 ml"],
+                imageUrl: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80",
+                description: "Deep black precision felt tip liquid eyeliner with smudge-proof, 24-hour stay formula."
+            },
+            {
+                id: 19,
+                name: "Minimalist Salicylic Acid 2% Gentle Face Cleanser",
+                brand: "MINIMALIST",
+                category: "Beauty",
+                gender: "Women",
+                price: 299,
+                originalPrice: 349,
+                discountPercent: 15,
+                rating: 4.8,
+                reviewsCount: 2890,
+                badge: "DERMA",
+                sizes: ["100 ml"],
+                imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
+                description: "Sulfate-free exfoliating cleanser with LHA and Zinc for acne control and oil balance."
+            },
+            {
+                id: 20,
+                name: "MAC Retro Matte Velvet Lipstick - Ruby Woo",
+                brand: "MAC",
+                category: "Beauty",
+                gender: "Women",
+                price: 2150,
+                originalPrice: 2400,
+                discountPercent: 10,
+                rating: 4.9,
+                reviewsCount: 3500,
+                badge: "CULT FAVORITE",
+                sizes: ["3 gm"],
+                imageUrl: "https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=800&q=80",
+                description: "Iconic vivid blue-red matte lipstick with long-wearing non-feathering formula."
+            },
+
+            // FOOTWEAR & SNEAKERS
+            {
+                id: 21,
+                name: "Nike Air Max SC Leather Running Sneakers",
+                brand: "NIKE",
+                category: "Shoes",
+                gender: "Men",
+                price: 4799,
+                originalPrice: 5995,
+                discountPercent: 20,
+                rating: 4.9,
+                reviewsCount: 940,
+                badge: "NIKE AIR",
+                sizes: ["UK 7", "UK 8", "UK 9", "UK 10"],
+                imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+                description: "White and royal blue track style sneakers with visible Air cushioning."
+            },
+            {
+                id: 22,
+                name: "Puma Men Black & White Smash V2 Low-Tops",
+                brand: "PUMA",
+                category: "Shoes",
+                gender: "Men",
+                price: 2399,
+                originalPrice: 3999,
+                discountPercent: 40,
+                rating: 4.7,
+                reviewsCount: 1120,
+                badge: "CLASSIC",
+                sizes: ["UK 7", "UK 8", "UK 9"],
+                imageUrl: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80",
+                description: "Classic tennis silhouette in soft black suede with signature Puma formstrip."
+            },
+            {
+                id: 23,
+                name: "Adidas Originals Stan Smith Iconic White Sneakers",
+                brand: "ADIDAS",
+                category: "Shoes",
+                gender: "Men",
+                price: 5599,
+                originalPrice: 7999,
+                discountPercent: 30,
+                rating: 4.9,
+                reviewsCount: 1820,
+                badge: "ORIGINALS",
+                sizes: ["UK 7", "UK 8", "UK 9", "UK 10"],
+                imageUrl: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80",
+                description: "Timeless minimalist court sneaker with perforated 3-Stripes and green heel tab."
+            },
+            {
+                id: 24,
+                name: "Red Tape Men Genuine Leather Chelsea Boots",
+                brand: "RED TAPE",
+                category: "Shoes",
+                gender: "Men",
+                price: 2699,
+                originalPrice: 5999,
+                discountPercent: 55,
+                rating: 4.8,
+                reviewsCount: 650,
+                badge: "LEATHER",
+                sizes: ["UK 7", "UK 8", "UK 9"],
+                imageUrl: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?auto=format&fit=crop&w=800&q=80",
+                description: "Handcrafted rich cognac brown ankle Chelsea boots with stretch side panels and TPR sole."
+            },
+
+            // ACCESSORIES & WATCHES
+            {
+                id: 25,
+                name: "Fossil Men Chronograph Black Leather Watch",
+                brand: "FOSSIL",
+                category: "Watches",
+                gender: "Men",
+                price: 7699,
+                originalPrice: 10999,
+                discountPercent: 30,
+                rating: 4.8,
+                reviewsCount: 450,
+                badge: "CHRONO",
+                sizes: ["Standard 44mm"],
+                imageUrl: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+                description: "Gunmetal stainless steel case with genuine black leather strap. 50m water resistance."
+            },
+            {
+                id: 26,
+                name: "Ray-Ban Hexagonal Flat Polarized Sunglasses",
+                brand: "RAY-BAN",
+                category: "Watches",
+                gender: "Men",
+                price: 6890,
+                originalPrice: 9190,
+                discountPercent: 25,
+                rating: 4.9,
+                reviewsCount: 820,
+                badge: "POLARIZED",
+                sizes: ["Standard 51mm"],
+                imageUrl: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80",
+                description: "Gold polished hexagonal metal frame with classic G-15 green polarized lenses."
+            },
+            {
+                id: 27,
+                name: "Titan Raga Aurora Rose Gold Pearl Dial Watch",
+                brand: "TITAN",
+                category: "Watches",
+                gender: "Women",
+                price: 4795,
+                originalPrice: 5995,
+                discountPercent: 20,
+                rating: 4.9,
+                reviewsCount: 510,
+                badge: "ROSE GOLD",
+                sizes: ["Standard 32mm"],
+                imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80",
+                description: "Jewelry-inspired rose gold wristwatch with mother-of-pearl dial and Swarovski crystal accents."
             }
         ];
 
         let cart = [
             { productId: 1, size: "M", quantity: 1, price: 899 },
-            { productId: 7, size: "4.2 ml", quantity: 2, price: 599 }
+            { productId: 15, size: "4.2 ml", quantity: 2, price: 599 }
         ];
-        let wishlist = [4, 9];
+        let wishlist = [4, 9, 21];
         let appliedCoupon = null;
         let selectedGender = "All";
         let selectedCategory = "All";
+        let selectedPriceRange = "All";
         let searchQuery = "";
         let currentSort = "featured";
 
@@ -1388,7 +1713,7 @@
                 courier: "Bluedart Express (AWB: 8829410)",
                 items: [
                     { productId: 1, size: "M", quantity: 1, price: 899 },
-                    { productId: 7, size: "4.2 ml", quantity: 2, price: 599 }
+                    { productId: 15, size: "4.2 ml", quantity: 2, price: 599 }
                 ]
             },
             {
@@ -1398,7 +1723,7 @@
                 total: 1999,
                 courier: "Delhivery Surface (Delivered)",
                 items: [
-                    { productId: 4, size: "M", quantity: 1, price: 1999 }
+                    { productId: 8, size: "M", quantity: 1, price: 1999 }
                 ]
             }
         ];
@@ -1452,6 +1777,11 @@
             let filtered = products.filter(p => {
                 if (selectedGender !== "All" && p.gender !== selectedGender) return false;
                 if (selectedCategory !== "All" && p.category !== selectedCategory) return false;
+
+                if (selectedPriceRange === "under999" && p.price >= 1000) return false;
+                if (selectedPriceRange === "1000to2500" && (p.price < 1000 || p.price > 2500)) return false;
+                if (selectedPriceRange === "above2500" && p.price <= 2500) return false;
+
                 if (searchQuery) {
                     const q = searchQuery.toLowerCase();
                     return p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) || p.category.toLowerCase().includes(q);
@@ -1462,6 +1792,7 @@
             if (currentSort === "price-low") filtered.sort((a,b) => a.price - b.price);
             else if (currentSort === "price-high") filtered.sort((a,b) => b.price - a.price);
             else if (currentSort === "discount") filtered.sort((a,b) => b.discountPercent - a.discountPercent);
+            else if (currentSort === "rating") filtered.sort((a,b) => b.rating - a.rating);
 
             document.getElementById('catalogCount').innerText = `${filtered.length} styles found`;
 
@@ -1474,7 +1805,9 @@
                             <button class="wishlist-heart-btn ${isWishlisted ? 'active' : ''}" onclick="toggleWishlist(${p.id}, event)">
                                 ${isWishlisted ? '❤️' : '🤍'}
                             </button>
+                            <span class="badge-flair ${p.category === 'Beauty' ? 'nykaa' : 'hot'}">${p.badge}</span>
                             <span class="discount-badge-ribbon">${p.discountPercent}% OFF</span>
+                            <div class="rating-star-tag"><span style="color: var(--success);">★</span> ${p.rating}</div>
                         </div>
                         <div class="product-body">
                             <div class="brand-name">${p.brand}</div>
@@ -1503,6 +1836,13 @@
         function filterCategory(cat, btn) {
             selectedCategory = cat;
             document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderCatalog();
+        }
+
+        function filterPrice(range, btn) {
+            selectedPriceRange = range;
+            document.querySelectorAll('.filters-toolbar .filter-btn').forEach(b => b.classList.remove('active'));
             if (btn) btn.classList.add('active');
             renderCatalog();
         }
