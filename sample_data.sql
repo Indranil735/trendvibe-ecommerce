@@ -1,5 +1,5 @@
 -- ==========================================================
--- E-COMMERCE SAMPLE DATA (MYNTRA / AJIO / NYKAA STYLE)
+-- E-COMMERCE SAMPLE DATA (TRENDVIBE ATELIER LUXURY FASHION & BEAUTY)
 -- Real-world expanded catalog data for 27 premium products
 -- ==========================================================
 
@@ -7,9 +7,9 @@ USE ecommerce_db;
 
 -- 1. SEED CATEGORIES
 INSERT INTO categories (category_id, category_name, description, is_active) VALUES
-(1, 'Men Fashion', 'Premium shirts, t-shirts, jeans, and formal wear (Myntra/Ajio style)', TRUE),
+(1, 'Men Fashion', 'Premium shirts, t-shirts, jeans, and formal wear (Atelier Tailored Collection)', TRUE),
 (2, 'Women Ethnic & Western', 'Trendy dresses, kurtas, lehengas, tops, and trousers', TRUE),
-(3, 'Beauty & Cosmetics', 'Nykaa-inspired skincare, makeup, perfumes, and hair care', TRUE),
+(3, 'Beauty & Cosmetics', 'Artisanal French perfumes, active botanical serums, and clean cosmetics', TRUE),
 (4, 'Footwear & Sneakers', 'Casual sneakers, formal shoes, heels, and running shoes', TRUE),
 (5, 'Accessories & Watches', 'Luxury analog watches, sunglasses, leather wallets, and jewelry', TRUE)
 ON DUPLICATE KEY UPDATE category_name=VALUES(category_name);
@@ -41,8 +41,8 @@ INSERT INTO products (product_id, category_id, product_name, description, discou
 (13, 2, 'FabIndia Hand-Block Printed Chanderi Silk Saree', 'Traditional magenta and golden zari handloom Chanderi silk saree with matching blouse piece.', 35.00, 'https://images.unsplash.com/photo-1610030469668-935cb7462002?auto=format&fit=crop&w=800&q=80', TRUE),
 (14, 2, 'Vero Moda Women Pleated Satin Party Blouse', 'Emerald green cowl neck sleeveless satin top with delicate pleats and button closure.', 30.00, 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&w=800&q=80', TRUE),
 
--- Nykaa Beauty & Skincare
-(15, 3, 'Nykaa Matte to Last! Liquid Lipstick - Chai', 'Ultra-lightweight matte liquid lipstick infused with Vitamin E. Transfer-proof, 12-hour wear.', 20.00, 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=80', TRUE),
+-- Beauty & Fine Fragrance
+(15, 3, 'Maison De Beauté Velvet Liquid Lip Trio - Nude Rouge', 'Ultra-lightweight matte liquid lipstick infused with Vitamin E. Transfer-proof, 12-hour wear.', 20.00, 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=80', TRUE),
 (16, 3, 'The Ordinary Niacinamide 10% + Zinc 1% Serum', 'High-strength vitamin and mineral blemish formula. Visibly balances sebum and clarifies pores.', 15.00, 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80', TRUE),
 (17, 3, 'Forest Essentials Soundarya Radiance Cream with 24K Gold', 'Ayurvedic anti-aging day cream infused with 24K pure gold bhasma and saffron for natural glow.', 10.00, 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80', TRUE),
 (18, 3, 'Kay Beauty 24H Waterproof Matte HD Liquid Eyeliner', 'Deep black precision felt tip liquid eyeliner with smudge-proof, 24-hour stay formula.', 25.00, 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80', TRUE),
