@@ -1,0 +1,2 @@
+# TrendVibe Web Service dependencies
+# Standard library HTTP server used for high performance & zero overhead
