@@ -8,7 +8,7 @@
                 <ul>
                     <li><a href="${pageContext.request.contextPath}/products?category=1">Men's Fashion</a></li>
                     <li><a href="${pageContext.request.contextPath}/products?category=2">Women's Ethnic &amp; Western</a></li>
-                    <li><a href="${pageContext.request.contextPath}/products?category=3">Beauty &amp; Nykaa Cosmetics</a></li>
+                    <li><a href="${pageContext.request.contextPath}/products?category=3">Clean Beauty &amp; Fine Scents</a></li>
                     <li><a href="${pageContext.request.contextPath}/products?category=4">Footwear &amp; Sneakers</a></li>
                     <li><a href="${pageContext.request.contextPath}/products?category=5">Luxury Watches &amp; Accessories</a></li>
                 </ul>
@@ -26,7 +26,7 @@
             <div class="footer-col">
                 <h4>EXPERIENCE TRENDVIBE APP</h4>
                 <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
-                    Download our high-speed mobile shopping app for exclusive coupons and instant flash sale drops.
+                    Experience our high-speed mobile shopping web app with instant quick view and white-glove delivery.
                 </p>
                 <div style="display: flex; gap: 8px;">
                     <span style="border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 4px; font-size: 11px; font-weight: 700;">Google Play</span>
@@ -36,7 +36,7 @@
             <div class="footer-col">
                 <h4>100% ORIGINAL GUARANTEE</h4>
                 <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
-                    ✅ 100% ORIGINAL guarantee for all products on TrendVibe.
+                    ✅ 100% ORIGINAL certified luxury guarantee for all products on TrendVibe.
                 </p>
                 <p style="font-size: 13px; color: var(--text-muted);">
                     🔄 Return within 14 days of receiving your order hassle-free.
@@ -45,7 +45,7 @@
         </div>
 
         <div class="footer-bottom">
-            &copy; 2026 TrendVibe E-Commerce App. Designed with Reference to Myntra, Ajio &amp; Nykaa. Built with Jakarta EE &amp; MySQL on Apache Tomcat.
+            &copy; 2026 TrendVibe Atelier. All rights reserved. Enterprise Java EE &amp; MySQL on Apache Tomcat.
         </div>
     </footer>
 

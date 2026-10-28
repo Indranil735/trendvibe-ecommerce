@@ -64,7 +64,7 @@
         <div class="product-card">
             <a href="${pageContext.request.contextPath}/product-details?id=${p.productId}" class="product-card-media">
                 <img src="${p.imageUrl}" alt="${p.productName}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'">
-                <c:if test="${p.discountPercent > 0}">
+                <c:if test="${p.discountPercent gt 0}">
                     <span class="discount-badge">${p.discountPercent.intValue()}% OFF</span>
                 </c:if>
             </a>
@@ -86,7 +86,7 @@
 
                 <div class="price-row">
                     <span class="price-final">&#8377;${p.finalPrice}</span>
-                    <c:if test="${p.discountPercent > 0}">
+                    <c:if test="${p.discountPercent gt 0}">
                         <span class="price-mrp">&#8377;${p.basePrice}</span>
                         <span class="price-off">(${p.discountPercent.intValue()}% OFF)</span>
                     </c:if>

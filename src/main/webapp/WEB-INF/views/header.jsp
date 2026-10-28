@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrendVibe | Myntra &amp; Nykaa Fashion &amp; Beauty Store</title>
+    <title>TrendVibe Atelier &bull; Luxury Fashion &amp; Beauty Store</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <link rel="icon" href="https://img.icons8.com/color/48/shopping-bag.png" type="image/png">
 </head>
@@ -14,7 +14,7 @@
 
     <!-- Top Announcement Bar -->
     <div class="top-announcement-bar">
-        ⚡ END OF SEASON SALE: UP TO 70% OFF ON TOP BRANDS + FREE SHIPPING ON ALL ORDERS!
+        ⚡ COMPLIMENTARY WHITE-GLOVE DELIVERY ON ORDERS OVER &#8377;2,500 &bull; AUTUMN/WINTER ATELIER
     </div>
 
     <!-- Header & Navbar -->
@@ -22,14 +22,14 @@
         <div class="header-container">
             <!-- Brand Logo -->
             <a href="${pageContext.request.contextPath}/home" class="brand-logo">
-                TRENDVIBE <span class="badge-beauty">NYKAA &bull; AJIO</span>
+                TRENDVIBE <span class="badge-beauty">ATELIER</span>
             </a>
 
             <!-- Main Navigation Categories -->
             <nav class="main-nav">
                 <a href="${pageContext.request.contextPath}/products?category=1">Men</a>
                 <a href="${pageContext.request.contextPath}/products?category=2">Women</a>
-                <a href="${pageContext.request.contextPath}/products?category=3" style="color: var(--nykaa-pink);">Beauty &amp; Nykaa</a>
+                <a href="${pageContext.request.contextPath}/products?category=3">Clean Beauty</a>
                 <a href="${pageContext.request.contextPath}/products?category=4">Footwear</a>
                 <a href="${pageContext.request.contextPath}/products?category=5">Accessories</a>
             </nav>
@@ -88,7 +88,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     </svg>
                     <span>Bag</span>
-                    <c:if test="${not empty cart and cart.itemCount > 0}">
+                    <c:if test="${not empty cart and cart.itemCount gt 0}">
                         <span class="badge-count">${cart.itemCount}</span>
                     </c:if>
                 </a>

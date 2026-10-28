@@ -36,7 +36,7 @@
                                 <form action="${pageContext.request.contextPath}/cart/update" method="POST" style="display: inline-flex;">
                                     <input type="hidden" name="cartItemId" value="${item.cartItemId}">
                                     <div class="qty-control">
-                                        <button type="submit" name="quantity" value="${item.quantity - 1}" class="qty-btn" ${item.quantity <= 1 ? 'disabled' : ''}>-</button>
+                                        <button type="submit" name="quantity" value="${item.quantity - 1}" class="qty-btn" ${item.quantity le 1 ? 'disabled' : ''}>-</button>
                                         <span class="qty-number">${item.quantity}</span>
                                         <button type="submit" name="quantity" value="${item.quantity + 1}" class="qty-btn">+</button>
                                     </div>
