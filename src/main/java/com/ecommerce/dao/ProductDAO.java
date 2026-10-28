@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ProductDAO {
+public class ProductDAO implements IProductDAO {
     private static final Logger LOGGER = Logger.getLogger(ProductDAO.class.getName());
 
     public List<Product> getAllActiveProducts() {

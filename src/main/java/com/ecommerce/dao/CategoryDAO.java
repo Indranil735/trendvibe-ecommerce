@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CategoryDAO {
+public class CategoryDAO implements ICategoryDAO {
     private static final Logger LOGGER = Logger.getLogger(CategoryDAO.class.getName());
 
     public List<Category> getAllActiveCategories() {

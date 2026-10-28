@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class UserDAO {
+public class UserDAO implements IUserDAO {
     private static final Logger LOGGER = Logger.getLogger(UserDAO.class.getName());
 
     public boolean registerUser(User user) {

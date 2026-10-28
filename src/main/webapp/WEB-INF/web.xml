@@ -4,10 +4,11 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
     
-    <display-name>Fashion &amp; Beauty E-Commerce Store (Myntra / Ajio / Nykaa)</display-name>
+    <display-name>TrendVibe Atelier - Luxury Fashion &amp; Beauty E-Commerce Store</display-name>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
     <!-- Product Controller -->

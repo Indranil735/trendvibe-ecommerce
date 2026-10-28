@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class OrderDAO {
+public class OrderDAO implements IOrderDAO {
     private static final Logger LOGGER = Logger.getLogger(OrderDAO.class.getName());
 
     public Order createOrderFromCart(int userId, String deliveryAddress, String paymentMethod) {
@@ -144,6 +144,29 @@ public class OrderDAO {
         return orders;
     }
 
+    public List<Order> getOrdersByUserId(int userId) {
+        return getOrdersByUser(userId);
+    }
+
+    public Order getOrderById(int orderId) {
+        String sql = "SELECT * FROM orders WHERE order_id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, orderId);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Order order = extractOrder(rs);
+                    order.setOrderItems(getOrderItems(orderId));
+                    return order;
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Error fetching order by ID: " + orderId, e);
+        }
+        return null;
+    }
+
     public Order getOrderById(int orderId, int userId) {
         String sql = "SELECT * FROM orders WHERE order_id = ? AND user_id = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -193,6 +216,20 @@ public class OrderDAO {
             LOGGER.log(Level.SEVERE, "Error fetching order items for order: " + orderId, e);
         }
         return items;
+    }
+
+    public boolean updateOrderStatus(int orderId, String status) {
+        String sql = "UPDATE orders SET order_status = ? WHERE order_id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, status);
+            ps.setInt(2, orderId);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Error updating status for order: " + orderId, e);
+        }
+        return false;
     }
 
     private Order extractOrder(ResultSet rs) throws SQLException {

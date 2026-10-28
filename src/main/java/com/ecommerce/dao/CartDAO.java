@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CartDAO {
+public class CartDAO implements ICartDAO {
     private static final Logger LOGGER = Logger.getLogger(CartDAO.class.getName());
 
     public Cart getOrCreateCart(int userId) {

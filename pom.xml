@@ -8,6 +8,8 @@
     <artifactId>ecommerce-app</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+    <name>TrendVibe Atelier E-Commerce Web Application</name>
+    <description>Enterprise Java EE E-Commerce Platform with MVC Architecture and JDBC Persistence</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
