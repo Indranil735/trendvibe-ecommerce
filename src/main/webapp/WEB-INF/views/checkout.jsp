@@ -19,7 +19,7 @@
 
                     <div class="form-group">
                         <label for="deliveryAddress">Shipping / Full Address</label>
-                        <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required>${user != null && not empty user.address ? user.address : 'Flat 402, Green Valley Apartments, Outer Ring Road, Bangalore, Karnataka - 560001'}</textarea>
+                        <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required>${user != null and not empty user.address ? user.address : 'Flat 402, Green Valley Apartments, Outer Ring Road, Bangalore, Karnataka - 560001'}</textarea>
                     </div>
                 </div>
 

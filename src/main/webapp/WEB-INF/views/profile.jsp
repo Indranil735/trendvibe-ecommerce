@@ -44,9 +44,9 @@
         <div class="form-group">
             <label for="gender">Gender</label>
             <select id="gender" name="gender">
-                <option value="Male" ${user != null && user.gender == 'Male' ? 'selected' : ''}>Male</option>
-                <option value="Female" ${user != null && user.gender == 'Female' ? 'selected' : ''}>Female</option>
-                <option value="Other" ${user != null && user.gender == 'Other' ? 'selected' : ''}>Other</option>
+                <option value="Male" ${user != null and user.gender == 'Male' ? 'selected' : ''}>Male</option>
+                <option value="Female" ${user != null and user.gender == 'Female' ? 'selected' : ''}>Female</option>
+                <option value="Other" ${user != null and user.gender == 'Other' ? 'selected' : ''}>Other</option>
             </select>
         </div>
 

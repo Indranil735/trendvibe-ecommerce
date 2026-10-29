@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+DELEGATES_PREFERENCE=delegateValidatorList
+USER_BUILD_PREFERENCE=enabledBuildValidatorListorg.eclipse.jst.jsp.core.internal.validation.JSPBatchValidator;
+USER_MANUAL_PREFERENCE=enabledManualValidatorListorg.eclipse.jst.jsp.core.internal.validation.JSPBatchValidator;
+USER_PREFERENCE=override
