@@ -5,7 +5,7 @@
 <div style="max-width: 860px; margin: 0 auto;">
     <div style="margin-bottom: 20px;">
         <a href="${pageContext.request.contextPath}/my-orders" style="font-size: 13px; font-weight: 700; color: var(--primary);">
-            &larr; Back to My Orders
+            &amp;larr; Back to My Orders
         </a>
     </div>
 
@@ -55,10 +55,10 @@
                 <div style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; margin-bottom: 28px;">
                     <c:forEach var="item" items="${order.orderItems}">
                         <div style="display: flex; gap: 16px; align-items: center; padding: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <img src="${item.imageUrl != null ? item.imageUrl : 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'}" 
+                            <img src="${item.imageUrl != null ? item.imageUrl : 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'}" 
                                  alt="${item.productName}" 
                                  style="width: 60px; height: 75px; object-fit: cover; border-radius: 4px;"
-                                 onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'">
+                                 onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'">
 
                             <div style="flex: 1;">
                                 <h4 style="font-size: 14px; font-weight: 800; margin-bottom: 4px;">${item.productName}</h4>
@@ -74,7 +74,7 @@
                     </c:forEach>
                 </div>
 
-                <!-- Address & Payment Summary Split -->
+                <!-- Address &amp; Payment Summary Split -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--border-color); padding-top: 20px;">
                     <div>
                         <h4 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px;">Delivery Address</h4>

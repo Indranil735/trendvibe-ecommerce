@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <jsp:include page="header.jsp" />
 
 <c:choose>
@@ -15,9 +15,9 @@
                 <c:forEach var="item" items="${cart.items}">
                     <div class="cart-item-card">
                         <div class="cart-item-img">
-                            <img src="${item.product != null ? item.product.imageUrl : 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'}" 
+                            <img src="${item.product != null ? item.product.imageUrl : 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'}" 
                                  alt="${item.product != null ? item.product.productName : 'Item'}"
-                                 onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'">
+                                 onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'">
                         </div>
 
                         <div class="cart-item-details">
@@ -84,7 +84,7 @@
                     </div>
 
                     <a href="${pageContext.request.contextPath}/checkout" class="btn-place-order" style="display: block; text-align: center;">
-                        PROCEED TO CHECKOUT &rarr;
+                        PROCEED TO CHECKOUT &amp;rarr;
                     </a>
                 </div>
 

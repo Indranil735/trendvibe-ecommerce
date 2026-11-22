@@ -6,7 +6,7 @@
     <!-- Product Gallery Left Column -->
     <div class="detail-gallery">
         <div class="detail-main-img">
-            <img src="${product.imageUrl}" alt="${product.productName}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'">
+            <img src="${product.imageUrl}" alt="${product.productName}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'">
         </div>
     </div>
 
@@ -108,7 +108,7 @@
             <c:forEach var="rp" items="${relatedProducts}" end="3">
                 <div class="product-card">
                     <a href="${pageContext.request.contextPath}/product-details?id=${rp.productId}" class="product-card-media">
-                        <img src="${rp.imageUrl}" alt="${rp.productName}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'">
+                        <img src="${rp.imageUrl}" alt="${rp.productName}" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'">
                         <c:if test="${rp.discountPercent gt 0}">
                             <span class="discount-badge">${rp.discountPercent.intValue()}% OFF</span>
                         </c:if>
@@ -132,7 +132,7 @@
 function checkPincode() {
     const input = document.getElementById('pincodeInput').value.trim();
     const result = document.getElementById('pincodeResult');
-    if (input.length === 6 && /^\d+$/.test(input)) {
+    if (input.length === 6 &amp;&amp; /^\d+$/.test(input)) {
         result.style.color = 'var(--success)';
         result.innerHTML = '⚡ Express Delivery available by tomorrow! Cash on Delivery eligible.';
     } else {

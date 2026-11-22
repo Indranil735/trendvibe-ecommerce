@@ -9,7 +9,7 @@
 
     <form action="${pageContext.request.contextPath}/checkout/place-order" method="POST">
         <div class="cart-layout">
-            <!-- Left: Address & Payment Selection -->
+            <!-- Left: Address &amp; Payment Selection -->
             <div style="display: flex; flex-direction: column; gap: 24px;">
                 <!-- 1. Delivery Address Card -->
                 <div style="background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 24px;">

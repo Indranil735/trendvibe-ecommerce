@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
         ⚡ COMPLIMENTARY WHITE-GLOVE DELIVERY ON ORDERS OVER &#8377;2,500 &bull; AUTUMN/WINTER ATELIER
     </div>
 
-    <!-- Header & Navbar -->
+    <!-- Header &amp; Navbar -->
     <header class="site-header">
         <div class="header-container">
             <!-- Brand Logo -->

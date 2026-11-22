@@ -8,7 +8,7 @@
             My Orders (${orders != null ? orders.size() : 0})
         </h2>
         <a href="${pageContext.request.contextPath}/products" style="font-size: 13px; font-weight: 700; color: var(--primary);">
-            &plus; Shop More Styles
+            &amp;plus; Shop More Styles
         </a>
     </div>
 
@@ -48,10 +48,10 @@
                         <div style="padding: 20px;">
                             <c:forEach var="item" items="${ord.orderItems}">
                                 <div style="display: flex; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
-                                    <img src="${item.imageUrl != null ? item.imageUrl : 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'}" 
+                                    <img src="${item.imageUrl != null ? item.imageUrl : 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'}" 
                                          alt="${item.productName}" 
                                          style="width: 70px; height: 90px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color);"
-                                         onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'">
+                                         onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'">
 
                                     <div style="flex: 1;">
                                         <h4 style="font-size: 14px; font-weight: 800; color: var(--dark); margin-bottom: 4px;">
@@ -73,7 +73,7 @@
                         <div style="padding: 12px 20px; background: #fafafa; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
                             <span style="font-size: 12px; color: var(--text-muted);">Payment: <strong>${ord.paymentMethod}</strong></span>
                             <a href="${pageContext.request.contextPath}/order-details?id=${ord.orderId}" style="font-size: 13px; font-weight: 700; color: var(--primary);">
-                                View Invoice Details &rarr;
+                                View Invoice Details &amp;rarr;
                             </a>
                         </div>
                     </div>

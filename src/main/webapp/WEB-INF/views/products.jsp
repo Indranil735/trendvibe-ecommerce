@@ -32,7 +32,7 @@
             <h4 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Sizes</h4>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
                 <c:forEach var="sz" items="${['S', 'M', 'L', 'XL', 'UK 7', 'UK 8', 'UK 9']}">
-                    <a href="${pageContext.request.contextPath}/products?size=${sz}${not empty selectedCategory ? '&category='.concat(selectedCategory) : ''}" 
+                    <a href="${pageContext.request.contextPath}/products?size=${sz}${not empty selectedCategory ? '&amp;category='.concat(selectedCategory) : ''}" 
                        style="padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 700; border: 1px solid ${selectedSize == sz ? 'var(--primary)' : 'var(--border-color)'}; color: ${selectedSize == sz ? 'var(--primary)' : 'var(--dark)'}; background: ${selectedSize == sz ? 'var(--primary-light)' : '#fff'};">
                         ${sz}
                     </a>
@@ -44,15 +44,15 @@
         <div>
             <h4 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Sort By</h4>
             <div style="display: flex; flex-direction: column; gap: 8px;">
-                <a href="${pageContext.request.contextPath}/products?sort=recommended${not empty selectedCategory ? '&category='.concat(selectedCategory) : ''}" 
+                <a href="${pageContext.request.contextPath}/products?sort=recommended${not empty selectedCategory ? '&amp;category='.concat(selectedCategory) : ''}" 
                    style="font-size: 13px; color: ${empty selectedSort || selectedSort == 'recommended' ? 'var(--primary)' : 'var(--text-muted)'}; font-weight: ${empty selectedSort || selectedSort == 'recommended' ? '700' : '400'};">
                     Recommended
                 </a>
-                <a href="${pageContext.request.contextPath}/products?sort=discount${not empty selectedCategory ? '&category='.concat(selectedCategory) : ''}" 
+                <a href="${pageContext.request.contextPath}/products?sort=discount${not empty selectedCategory ? '&amp;category='.concat(selectedCategory) : ''}" 
                    style="font-size: 13px; color: ${selectedSort == 'discount' ? 'var(--primary)' : 'var(--text-muted)'}; font-weight: ${selectedSort == 'discount' ? '700' : '400'};">
                     Better Discount
                 </a>
-                <a href="${pageContext.request.contextPath}/products?sort=newest${not empty selectedCategory ? '&category='.concat(selectedCategory) : ''}" 
+                <a href="${pageContext.request.contextPath}/products?sort=newest${not empty selectedCategory ? '&amp;category='.concat(selectedCategory) : ''}" 
                    style="font-size: 13px; color: ${selectedSort == 'newest' ? 'var(--primary)' : 'var(--text-muted)'}; font-weight: ${selectedSort == 'newest' ? '700' : '400'};">
                     What's New
                 </a>
@@ -84,7 +84,7 @@
                     <c:forEach var="p" items="${products}">
                         <div class="product-card">
                             <a href="${pageContext.request.contextPath}/product-details?id=${p.productId}" class="product-card-media">
-                                <img src="${p.imageUrl}" alt="${p.productName}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'">
+                                <img src="${p.imageUrl}" alt="${p.productName}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'">
                                 <c:if test="${p.discountPercent gt 0}">
                                     <span class="discount-badge">${p.discountPercent.intValue()}% OFF</span>
                                 </c:if>

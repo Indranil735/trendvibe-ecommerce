@@ -11,7 +11,7 @@
             <p class="hero-desc">
                 Discover the latest arrivals in menswear, ethnic elegance, streetwear sneakers, and Nykaa luxury skincare.
             </p>
-            <a href="${pageContext.request.contextPath}/products" class="hero-btn">Explore Full Catalog &rarr;</a>
+            <a href="${pageContext.request.contextPath}/products" class="hero-btn">Explore Full Catalog &amp;rarr;</a>
         </div>
         <div class="hero-image-decor" style="font-size: 110px; opacity: 0.9; text-shadow: 0 8px 24px rgba(0,0,0,0.3);">
             👗✨👟
@@ -22,7 +22,7 @@
 <!-- Shop By Category Section -->
 <div class="section-heading">
     <h2 class="section-title">Shop by Category</h2>
-    <a href="${pageContext.request.contextPath}/products" style="color: var(--primary); font-size: 13px; font-weight: 700;">View All &rarr;</a>
+    <a href="${pageContext.request.contextPath}/products" style="color: var(--primary); font-size: 13px; font-weight: 700;">View All &amp;rarr;</a>
 </div>
 
 <div class="category-row">
@@ -63,7 +63,7 @@
     <c:forEach var="p" items="${products}">
         <div class="product-card">
             <a href="${pageContext.request.contextPath}/product-details?id=${p.productId}" class="product-card-media">
-                <img src="${p.imageUrl}" alt="${p.productName}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'">
+                <img src="${p.imageUrl}" alt="${p.productName}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=800&amp;q=80'">
                 <c:if test="${p.discountPercent gt 0}">
                     <span class="discount-badge">${p.discountPercent.intValue()}% OFF</span>
                 </c:if>
