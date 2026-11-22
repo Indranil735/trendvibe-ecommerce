@@ -1489,7 +1489,7 @@
                 <div>
                     <h4 class="footer-col-title">Client Care</h4>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="showToast('White-glove delivery tracking'); return false;">Order Tracking</a></li>
+                        <li><a href="#" onclick="openOrderTrackingModal('TRV-98241'); return false;">Order Tracking</a></li>
                         <li><a href="#" onclick="showToast('Returns: 14 days complimentary'); return false;">Returns Policy</a></li>
                         <li><a href="#" onclick="showToast('Certificate of authenticity included'); return false;">Authenticity Guarantee</a></li>
                         <li><a href="#" onclick="openAuthOrAccount(); return false;">Customer Account</a></li>
@@ -2495,6 +2495,92 @@ Express Dispatch notification sent to +91 ${phone}.`);
                 toast.classList.remove('show');
             }, 3000);
         }
-    </script>
+    
+    function openOrderTrackingModal(customOrderId) {
+        if (customOrderId) {
+            document.getElementById('trackOrderInput').value = customOrderId;
+            document.getElementById('trackDisplayId').innerText = customOrderId;
+        }
+        openModal('orderTrackingModal');
+    }
+
+    function executeTrackOrder() {
+        const val = document.getElementById('trackOrderInput').value.trim();
+        if (!val) {
+            showToast('Please enter an Order ID or Tracking Number');
+            return;
+        }
+        document.getElementById('trackDisplayId').innerText = val.toUpperCase();
+        showToast('Tracking data updated for ' + val.toUpperCase());
+    }
+
+</script>
+
+    <!-- LIVE ORDER TRACKING MODAL -->
+    <div id="orderTrackingModal" class="modal-backdrop" onclick="if(event.target===this)closeModal('orderTrackingModal')">
+        <div class="modal-box" style="max-width: 640px; border-radius: 12px; padding: 28px; background: #fff; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px;">
+                <div>
+                    <span style="display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: #fdf8f0; padding: 3px 8px; border-radius: 4px; margin-bottom: 4px;">LIVE COURIER RADAR</span>
+                    <h3 style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; color: var(--primary); margin: 0;">Order & Delivery Tracking</h3>
+                </div>
+                <button type="button" onclick="closeModal('orderTrackingModal')" style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-muted);">&times;</button>
+            </div>
+
+            <!-- Tracking Input Search -->
+            <div style="display: flex; gap: 8px; margin-bottom: 24px;">
+                <input type="text" id="trackOrderInput" placeholder="Enter Order ID (e.g. TRV-98241 or 101)" 
+                       style="flex: 1; padding: 12px 16px; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; outline: none;">
+                <button type="button" onclick="executeTrackOrder()" 
+                        style="background: var(--primary); color: #fff; border: none; border-radius: 6px; padding: 12px 20px; font-weight: 700; font-size: 13px; cursor: pointer; letter-spacing: 0.5px;">
+                    TRACK
+                </button>
+            </div>
+
+            <!-- Live Status Timeline Container -->
+            <div id="trackingResultArea" style="background: #fafaf8; border: 1px solid #e9e6df; border-radius: 8px; padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px dashed #d5d1c8; padding-bottom: 12px;">
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-muted);">Waybill # <strong id="trackDisplayId" style="color: var(--primary);">TRV-98241</strong></div>
+                        <div style="font-size: 13px; font-weight: 700; color: #15803d; margin-top: 2px;">● In Transit — On Schedule</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 11px; color: var(--text-muted);">Estimated Delivery</div>
+                        <div style="font-size: 13px; font-weight: 800; color: var(--primary);">Tomorrow, by 2:00 PM</div>
+                    </div>
+                </div>
+
+                <!-- 4 Step Stepper -->
+                <div style="display: flex; justify-content: space-between; position: relative; margin-top: 24px;">
+                    <div style="text-align: center; flex: 1; z-index: 2;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #15803d; color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: 800; font-size: 14px;">✓</div>
+                        <div style="font-size: 12px; font-weight: 700; color: var(--primary);">Confirmed</div>
+                        <div style="font-size: 10px; color: var(--text-muted);">10:30 AM</div>
+                    </div>
+                    <div style="text-align: center; flex: 1; z-index: 2;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #15803d; color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: 800; font-size: 14px;">✓</div>
+                        <div style="font-size: 12px; font-weight: 700; color: var(--primary);">Atelier Packed</div>
+                        <div style="font-size: 10px; color: var(--text-muted);">02:15 PM</div>
+                    </div>
+                    <div style="text-align: center; flex: 1; z-index: 2;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #a3824c; color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: 800; font-size: 14px;">⚡</div>
+                        <div style="font-size: 12px; font-weight: 800; color: #a3824c;">Out for Delivery</div>
+                        <div style="font-size: 10px; color: var(--text-muted);">Bangalore Hub</div>
+                    </div>
+                    <div style="text-align: center; flex: 1; z-index: 2;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #e5e3dc; color: #9c978b; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-weight: 800; font-size: 14px;">📦</div>
+                        <div style="font-size: 12px; font-weight: 600; color: #9c978b;">Delivered</div>
+                        <div style="font-size: 10px; color: var(--text-muted);">Signature Req.</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e9e6df; display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted);">
+                    <div>Courier Partner: <strong style="color: var(--primary);">BlueDart Express / White Glove</strong></div>
+                    <div>Recipient: <strong style="color: var(--primary);">Verified Customer</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
