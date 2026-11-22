@@ -23,7 +23,7 @@
                        style="font-size: 13px; color: ${selectedCategory == cat.categoryId ? 'var(--primary)' : 'var(--text-muted)'}; font-weight: ${selectedCategory == cat.categoryId ? '700' : '400'};">
                         ${cat.categoryName}
                     </a>
-                </c:forEach>
+                </c:forTokens>
             </div>
         </div>
 
@@ -31,12 +31,12 @@
         <div style="margin-bottom: 24px;">
             <h4 style="font-size: 13px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px;">Sizes</h4>
             <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <c:forEach var="sz" items="${['S', 'M', 'L', 'XL', 'UK 7', 'UK 8', 'UK 9']}">
+                <c:forTokens var="sz" items="S,M,L,XL,UK 7,UK 8,UK 9" delims=",">
                     <a href="${pageContext.request.contextPath}/products?size=${sz}${not empty selectedCategory ? '&amp;category='.concat(selectedCategory) : ''}" 
                        style="padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 700; border: 1px solid ${selectedSize == sz ? 'var(--primary)' : 'var(--border-color)'}; color: ${selectedSize == sz ? 'var(--primary)' : 'var(--dark)'}; background: ${selectedSize == sz ? 'var(--primary-light)' : '#fff'};">
                         ${sz}
                     </a>
-                </c:forEach>
+                </c:forTokens>
             </div>
         </div>
 
