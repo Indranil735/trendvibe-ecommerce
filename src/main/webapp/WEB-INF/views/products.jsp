@@ -23,7 +23,7 @@
                        style="font-size: 13px; color: ${selectedCategory == cat.categoryId ? 'var(--primary)' : 'var(--text-muted)'}; font-weight: ${selectedCategory == cat.categoryId ? '700' : '400'};">
                         ${cat.categoryName}
                     </a>
-                </c:forTokens>
+                </c:forEach>
             </div>
         </div>
 
