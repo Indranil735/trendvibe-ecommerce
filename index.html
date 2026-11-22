@@ -1470,7 +1470,57 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    
+    <!-- ENTERPRISE E-COMMERCE VALUE & TRUST PROPOSITIONS (Myntra/Ajio Luxe/Nykaa Inspired) -->
+    <section class="trust-propositions-section" style="background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 24px; margin-top: 60px;">
+        <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px;">
+            <!-- Benefit 1: Authenticity Guarantee -->
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 48px; height: 48px; border-radius: 8px; background: #faf8f5; border: 1px solid #ebd9c0; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+                    🛡️
+                </div>
+                <div>
+                    <h4 style="font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--primary); margin: 0 0 6px 0; letter-spacing: 0.5px;">100% VERIFIED AUTHENTICITY</h4>
+                    <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6; margin: 0;">Every luxury piece is directly sourced from certified ateliers and verified with an individual hallmark certificate.</p>
+                </div>
+            </div>
+
+            <!-- Benefit 2: Complimentary White Glove Shipping -->
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 48px; height: 48px; border-radius: 8px; background: #faf8f5; border: 1px solid #ebd9c0; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+                    ⚡
+                </div>
+                <div>
+                    <h4 style="font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--primary); margin: 0 0 6px 0; letter-spacing: 0.5px;">COMPLIMENTARY EXPRESS DELIVERY</h4>
+                    <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6; margin: 0;">Insured next-day express delivery across metro cities with climate-controlled packaging on orders over ₹2,500.</p>
+                </div>
+            </div>
+
+            <!-- Benefit 3: Hassle-Free 15-Day Doorstep Returns -->
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 48px; height: 48px; border-radius: 8px; background: #faf8f5; border: 1px solid #ebd9c0; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+                    🔄
+                </div>
+                <div>
+                    <h4 style="font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--primary); margin: 0 0 6px 0; letter-spacing: 0.5px;">15-DAY SEAMLESS EXCHANGE</h4>
+                    <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6; margin: 0;">Doorstep size trials and immediate refunds credited within 2 hours of package pickup.</p>
+                </div>
+            </div>
+
+            <!-- Benefit 4: 256-Bit Encrypted Payments -->
+            <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="width: 48px; height: 48px; border-radius: 8px; background: #faf8f5; border: 1px solid #ebd9c0; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;">
+                    🔒
+                </div>
+                <div>
+                    <h4 style="font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--primary); margin: 0 0 6px 0; letter-spacing: 0.5px;">SECURE PAYMENT GATEWAYS</h4>
+                    <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6; margin: 0;">PCI-DSS Level 1 compliant checkout supporting UPI, Credit/Debit cards, Net Banking, and Pay on Delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
@@ -1489,7 +1539,7 @@
                 <div>
                     <h4 class="footer-col-title">Client Care</h4>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="openOrderTrackingModal('TRV-98241'); return false;">Order Tracking</a></li>
+                        <li><a href="#" onclick="showToast('Order updates will be sent via SMS & WhatsApp'); return false;">Order Tracking</a></li>
                         <li><a href="#" onclick="showToast('Returns: 14 days complimentary'); return false;">Returns Policy</a></li>
                         <li><a href="#" onclick="showToast('Certificate of authenticity included'); return false;">Authenticity Guarantee</a></li>
                         <li><a href="#" onclick="openAuthOrAccount(); return false;">Customer Account</a></li>
@@ -2496,59 +2546,19 @@ Express Dispatch notification sent to +91 ${phone}.`);
             }, 3000);
         }
     
-    function openOrderTrackingModal(customOrderId) {
-        if (customOrderId) {
-            document.getElementById('trackOrderInput').value = customOrderId;
-            document.getElementById('trackDisplayId').innerText = customOrderId;
-        }
-        openModal('orderTrackingModal');
-    }
-
-    function executeTrackOrder() {
-        const val = document.getElementById('trackOrderInput').value.trim();
-        if (!val) {
-            showToast('Please enter an Order ID or Tracking Number');
-            return;
-        }
+    
         document.getElementById('trackDisplayId').innerText = val.toUpperCase();
         showToast('Tracking data updated for ' + val.toUpperCase());
     }
 
+
+    function openConciergeModal() {
+        openModal('vipConciergeModal');
+    }
+
 </script>
 
-    <!-- LIVE ORDER TRACKING MODAL -->
-    <div id="orderTrackingModal" class="modal-backdrop" onclick="if(event.target===this)closeModal('orderTrackingModal')">
-        <div class="modal-box" style="max-width: 640px; border-radius: 12px; padding: 28px; background: #fff; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px;">
-                <div>
-                    <span style="display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: #fdf8f0; padding: 3px 8px; border-radius: 4px; margin-bottom: 4px;">LIVE COURIER RADAR</span>
-                    <h3 style="font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; color: var(--primary); margin: 0;">Order & Delivery Tracking</h3>
-                </div>
-                <button type="button" onclick="closeModal('orderTrackingModal')" style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-muted);">&times;</button>
-            </div>
-
-            <!-- Tracking Input Search -->
-            <div style="display: flex; gap: 8px; margin-bottom: 24px;">
-                <input type="text" id="trackOrderInput" placeholder="Enter Order ID (e.g. TRV-98241 or 101)" 
-                       style="flex: 1; padding: 12px 16px; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; outline: none;">
-                <button type="button" onclick="executeTrackOrder()" 
-                        style="background: var(--primary); color: #fff; border: none; border-radius: 6px; padding: 12px 20px; font-weight: 700; font-size: 13px; cursor: pointer; letter-spacing: 0.5px;">
-                    TRACK
-                </button>
-            </div>
-
-            <!-- Live Status Timeline Container -->
-            <div id="trackingResultArea" style="background: #fafaf8; border: 1px solid #e9e6df; border-radius: 8px; padding: 20px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px dashed #d5d1c8; padding-bottom: 12px;">
-                    <div>
-                        <div style="font-size: 12px; color: var(--text-muted);">Waybill # <strong id="trackDisplayId" style="color: var(--primary);">TRV-98241</strong></div>
-                        <div style="font-size: 13px; font-weight: 700; color: #15803d; margin-top: 2px;">● In Transit — On Schedule</div>
-                    </div>
-                    <div style="text-align: right;">
-                        <div style="font-size: 11px; color: var(--text-muted);">Estimated Delivery</div>
-                        <div style="font-size: 13px; font-weight: 800; color: var(--primary);">Tomorrow, by 2:00 PM</div>
-                    </div>
-                </div>
+    
 
                 <!-- 4 Step Stepper -->
                 <div style="display: flex; justify-content: space-between; position: relative; margin-top: 24px;">
@@ -2579,6 +2589,63 @@ Express Dispatch notification sent to +91 ${phone}.`);
                     <div>Recipient: <strong style="color: var(--primary);">Verified Customer</strong></div>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+    <!-- FLOATING VIP CONCIERGE BUTTON -->
+    <div id="vipConciergeFloatingBtn" style="position: fixed; bottom: 28px; right: 28px; z-index: 990;">
+        <button type="button" onclick="openConciergeModal()" 
+                style="background: #111111; color: #ffffff; border: 1px solid #a3824c; border-radius: 30px; padding: 12px 22px; display: flex; align-items: center; gap: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 1px; cursor: pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.25); transition: all 0.2s ease;">
+            <span style="font-size: 16px;">✨</span>
+            <span>VIP STYLIST & HELP</span>
+        </button>
+    </div>
+
+    <!-- VIP STYLIST & CLIENT CARE MODAL -->
+    <div id="vipConciergeModal" class="modal-backdrop" onclick="if(event.target===this)closeModal('vipConciergeModal')">
+        <div class="modal-box" style="max-width: 500px; border-radius: 12px; padding: 28px; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 14px; margin-bottom: 20px;">
+                <div>
+                    <span style="font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent);">PERSONAL CONCIERGE</span>
+                    <h3 style="font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; margin: 2px 0 0 0;">Dedicated Stylist Advisory</h3>
+                </div>
+                <button type="button" onclick="closeModal('vipConciergeModal')" style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-muted);">&times;</button>
+            </div>
+            
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+                Connect instantly with our fashion advisors for size recommendations, custom tailoring enquiries, or order assistance.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                <a href="https://api.whatsapp.com/send?phone=919876543210&text=Hello%20TrendVibe%20Atelier,%20I%20would%20like%20assistance%20with%20my%20order" 
+                   target="_blank"
+                   style="display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 8px; background: #25D366; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 13px;">
+                    <span style="font-size: 20px;">💬</span>
+                    <span>Chat with Client Concierge on WhatsApp</span>
+                </a>
+
+                <div style="display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 8px; background: #fafaf8; border: 1px solid #e5e3dc; font-size: 13px;">
+                    <span style="font-size: 20px;">📞</span>
+                    <div>
+                        <div style="font-weight: 700; color: var(--primary);">Toll-Free Priority Line</div>
+                        <div style="color: var(--text-muted); font-size: 12px;">+91 (080) 4123-LUXE (10 AM – 9 PM)</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 8px; background: #fafaf8; border: 1px solid #e5e3dc; font-size: 13px;">
+                    <span style="font-size: 20px;">✉️</span>
+                    <div>
+                        <div style="font-weight: 700; color: var(--primary);">Atelier Email Enquiries</div>
+                        <div style="color: var(--text-muted); font-size: 12px;">concierge@trendvibe.com (Responds within 2 hrs)</div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" onclick="closeModal('vipConciergeModal')" 
+                    style="width: 100%; padding: 12px; background: var(--primary); color: #fff; border: none; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer;">
+                CLOSE
+            </button>
         </div>
     </div>
 
