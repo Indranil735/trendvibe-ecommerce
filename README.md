@@ -1,146 +1,119 @@
-# 🛍️ TrendVibe — Enterprise E-Commerce Fashion Platform (Myntra, Ajio & Nykaa Inspired)
+# TrendVibe Atelier — Enterprise Java Full Stack E-Commerce Platform
 
-[![Live Demo](https://img.shields.io/badge/Demo-GitHub%20Pages-brightgreen)](https://indranil735.github.io/trendvibe-ecommerce/)
-[![Deploy to Render](https://img.shields.io/badge/Deploy-Render-46E3B7?logo=render&logoColor=white)](https://render.com)
-[![Java](https://img.shields.io/badge/Java-Jakarta%20EE%2010-ED8B00?logo=openjdk&logoColor=white)](https://jakarta.ee)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?logo=mysql&logoColor=white)](https://mysql.com)
-
-A high-performance, full-stack E-Commerce web application inspired by **Myntra, Ajio, and Nykaa**. Designed with an enterprise Java MVC architecture (Jakarta EE, Servlets, JSP, JDBC, MySQL) and a responsive, mobile-first consumer storefront featuring 27 curated fashion and beauty products.
-
----
-
-## 🌟 Live Storefront Links
-
-- **GitHub Pages Live App:** [https://indranil735.github.io/trendvibe-ecommerce/](https://indranil735.github.io/trendvibe-ecommerce/)
-- **Render Deployment Ready:** Includes `render.yaml`, `Dockerfile`, and `server.py` for 1-click cloud container hosting.
+A production-grade, full-stack E-Commerce web application developed strictly using the **Java Full Stack Architecture**:
+- **Backend**: Java 21, Jakarta EE 10, Apache Tomcat 10.1, Java Servlets, JSP (JavaServer Pages), JSTL, and JDBC
+- **Database**: MySQL 8.0 (`ecommerce_db`) with PreparedStatement security, connection pooling, and ACID transaction rollback
+- **Frontend**: Responsive HTML5, CSS3 Luxury Design System, Vanilla JavaScript, and dynamic JSTL rendering
+- **IDE**: Eclipse IDE for Enterprise Java and Web Developers (2024+)
 
 ---
 
-## 🏗️ Architecture & Technology Stack
+## 🏛️ Project Architecture (MVC Pattern)
 
-| Layer | Technologies Used |
-|---|---|
-| **Frontend** | HTML5, CSS3 (Mobile-first Fashion Design System, Glassmorphic UI), Vanilla JavaScript |
-| **View Layer** | JSP (JavaServer Pages), Jakarta JSTL (Core & Formatting Tags) |
-| **Controller & Routing** | Java Servlets (`jakarta.servlet.*`), Servlet Filters (`AuthFilter`) |
-| **Data Access Layer** | JDBC (Java Database Connectivity) with `PreparedStatement` & DAO Pattern |
-| **Database** | MySQL 8.0+ (`ecommerce_db`) with 8 normalized relational tables |
-| **Build & Dependencies** | Apache Maven (`pom.xml`) |
-| **Cloud Deployment** | Render (`render.yaml`, `Dockerfile`), GitHub Pages (`gh-pages`) |
-| **Target IDE & Server** | Eclipse IDE for Enterprise Java / Apache Tomcat 10+ |
+TrendVibe Atelier adheres strictly to the **Model-View-Controller (MVC)** design pattern and **SOLID** principles:
 
----
-
-## 👗 Curated 27-Product Catalog Across 5 Categories
-
-1. **Men’s Wear**:
-   - Oversized Acid Wash Heavyweight Tee (AURA Street)
-   - Tailored Oxford Linen Shirt (Bombay Tailors)
-   - Relaxed Pleated Trousers (Atelier Men)
-   - Cargo Utility Flight Jacket (Urban Nomad)
-   - Minimalist Monochrome Hoodie (Kult Basics)
-   - Striped Resort Collar Polo (Riviera Men)
-
-2. **Women’s Wear (Ethnic & Western)**:
-   - Handloom Chanderi Anarkali Set (Virasat Ethnic)
-   - Linen Co-ord Summer Set (Studio Nyka)
-   - Floral Georgette Maxi Dress (Blush & Bloom)
-   - Chikankari Embroidered Kurta Set (Awadh Couturier)
-   - Sculpt Fit High-Rise Denim (Denim Lab)
-   - Banarasi Silk Zari Saree (Kashi Weaves)
-
-3. **Nykaa Beauty & Grooming**:
-   - Matte Velvet Liquid Lip Trio (Nykaa Luxe)
-   - Vitamin C Radiance Glow Serum (Aura Glow)
-   - Hydrating Ceramide Moisturizer (Derm Shield)
-   - 24H Waterproof Dramatic Gel Eyeliner (Kohl Queen)
-   - Arabian Oud Eau De Parfum (L’Orient Perfumery)
-   - Rosemary Hair Growth Density Elixir (Botanical Herbals)
-
-4. **Footwear & Sneakers**:
-   - Retro Chunky High-Top Sneakers (KickVibe)
-   - Handcrafted Leather Penny Loafers (Monk & Stitch)
-   - Strappy Stiletto Block Heels (Glamora)
-   - Air-Cushioned Ultra Pace Trainers (Veloce Sports)
-   - Minimalist Cloud Slides (Aura Comfort)
-
-5. **Luxury Watches & Accessories**:
-   - Classic Chronograph Emerald Dial Watch (Vanguard Timepieces)
-   - 18K Gold Plated Paperclip Chain (Luxe Accents)
-   - Acetate Retro Polarized Sunglasses (Solstice Eyewear)
-   - Genuine Italian Leather Crossbody Bag (Cuoio Firenze)
+```
+[ Browser / Client ]
+        │  (HTTP GET/POST)
+        ▼
+[ Apache Tomcat 10.1 Container ]
+        │  (web.xml URL Routing)
+        ▼
+[ Controller Layer: Java Servlets ]  <───> [ Session Management: HttpSession ]
+  • ProductController (/home, /products, /product-details)
+  • CartController (/cart, /cart/add, /cart/update, /cart/remove)
+  • CheckoutController (/checkout, /checkout/place-order, /my-orders)
+  • LoginController (/login) & RegisterController (/register)
+  • ProfileController (/profile) & LogoutController (/logout)
+        │
+        ▼  (Calls Interface Contracts)
+[ Data Access Layer: DAO Pattern ]
+  • Interfaces: IUserDAO, IProductDAO, ICategoryDAO, ICartDAO, IOrderDAO
+  • Implementations: UserDAO, ProductDAO, CategoryDAO, CartDAO, OrderDAO
+  • DBConnection: Centralized JDBC Manager (DriverManager + UTF-8 + Auto-Reconnect)
+        │
+        ▼  (PreparedStatement SQL)
+[ Relational Database: MySQL 8.0 (ecommerce_db) ]
+  • Tables: users, categories, products, product_sizes, cart, cart_items, orders, order_items
+        │
+        ▼  (Maps ResultSet to POJOs)
+[ Model Layer: POJOs ]
+  • User, Product, ProductSize, Category, Cart, CartItem, Order, OrderItem
+        │
+        ▼  (request.setAttribute() + RequestDispatcher.forward())
+[ View Layer: JSP + JSTL + Expression Language ]
+  • Securely protected inside /WEB-INF/views/
+  • home.jsp, products.jsp, product-details.jsp, cart.jsp, checkout.jsp, orders.jsp, etc.
+```
 
 ---
 
-## ⚡ Key Features
+## 🛠️ Technology Stack Breakdown
 
-- **Dynamic Filtering & Price Segments**:
-  - Filter by category (`All`, `Men`, `Women`, `Beauty`, `Footwear`, `Accessories`).
-  - Price segment pills: `Under ₹999`, `₹1,000 - ₹2,500`, `₹2,500+`.
-  - Brand badges: `BESTSELLER`, `NYKAA HIT`, `LUXE PICK`, `TRENDING`.
-- **Instant Search**: Real-time debounce searching across titles, brands, and categories.
-- **PIN Code Delivery Check**: Live Indian postal code estimator calculating delivery dates and express courier availability.
-- **Cart & Discount Engine**:
-  - Add to cart with size selection (`S`, `M`, `L`, `XL`, `Free Size`).
-  - Promo code verification (`AURA10` for 10% off, `NYKAA20` for 20% off, `FIRST500` for ₹500 off).
-  - Real-time subtotal, GST (18%), and delivery fee calculation.
-- **User Authentication & Profile**:
-  - Simulated customer login and session tracking.
-  - Role-based Admin dashboard for product creation and catalog audits.
-- **Responsive Mobile Experience**: Native app-like bottom navigation, sticky header, and touch-optimized gestures.
+| Layer | Technologies & Tools |
+| :--- | :--- |
+| **Backend Language** | **Java (JDK 21 / JavaSE-21)** |
+| **Web Container / Server** | **Apache Tomcat 10.1.36** |
+| **Enterprise Framework** | **Jakarta EE 10 (Servlets, JSP, JSTL 2.0)** |
+| **Database & Persistence** | **MySQL 8.0, JDBC (Java Database Connectivity), MySQL Connector/J 8.3.0** |
+| **Architecture Patterns** | **MVC (Model-View-Controller), DAO Pattern, Singleton (DBConnection)** |
+| **Frontend** | **HTML5, CSS3 (Luxury Atelier Design System), Vanilla JavaScript** |
+| **Security** | **PreparedStatement (SQL Injection immunity), /WEB-INF/ protected views, Session Authentication** |
+| **Build & Tooling** | **Apache Maven (`pom.xml`), Eclipse IDE for Enterprise Java** |
 
 ---
 
-## 🚀 Deployment to Render (Step-by-Step)
+## 💾 Database Setup (MySQL)
 
-This repository includes full configuration for deploying on **Render** (free cloud container tier):
-
-### Option 1: Render Web Service via Git (Recommended)
-1. Sign in to [Render.com](https://render.com).
-2. Click **New +** > **Web Service**.
-3. Connect your GitHub repository: `Indranil735/trendvibe-ecommerce`.
-4. Render will automatically detect `render.yaml` or you can configure manually:
-   - **Environment:** `Python`
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `python3 server.py`
-   - **Plan:** `Free`
-5. Click **Create Web Service**.
-6. Render will provision the container and give you a live HTTPS URL (e.g., `https://trendvibe-ecommerce.onrender.com`).
-
-### Option 2: Render Docker Web Service
-1. On Render, select **Docker** runtime.
-2. Render will build directly from the included `Dockerfile` and expose the service on port 8080.
-
----
-
-## 💻 Local Setup in Eclipse IDE (Jakarta EE & Tomcat)
-
-1. **Clone or copy the project:**
+1. Open Terminal or MySQL Workbench:
    ```bash
-   git clone https://github.com/Indranil735/trendvibe-ecommerce.git
+   mysql -u root -p
    ```
-2. **Execute MySQL Schemas:**
+2. Run the database schema and sample data scripts included in the project:
    ```sql
-   SOURCE schema.sql;
-   SOURCE sample_data.sql;
+   CREATE DATABASE IF NOT EXISTS ecommerce_db;
+   USE ecommerce_db;
    ```
-3. **Import into Eclipse:**
-   - **File** > **Import...** > **Maven** > **Existing Maven Projects**.
-   - Browse to `ecommerce-app` directory.
-4. **Run on Tomcat 10:**
-   - Right-click project > **Run As** > **Run on Server** > Select **Tomcat 10.1**.
-   - Browse `http://localhost:8080/ecommerce-app/`.
+3. Import the schema and dataset:
+   ```bash
+   mysql -u root -p ecommerce_db < schema.sql
+   mysql -u root -p ecommerce_db < sample_data.sql
+   ```
+4. Verify tables:
+   - `users` (3 seed accounts: admin, customer, premium customer)
+   - `categories` (5 departments: Men Fashion, Women Ethnic, Beauty, Footwear, Accessories)
+   - `products` (27 curated catalog items)
+   - `product_sizes` (inventory per size variant S, M, L, XL)
+   - `cart` and `cart_items`
+   - `orders` and `order_items`
 
 ---
 
-## 📄 Interview Preparation Guide
+## 💻 Running the Project in Eclipse IDE
 
-The standalone interview guide PDF for this project is generated at:
-`Desktop/TrendVibe_Project_Interview_Guide.pdf`
+1. **Import into Eclipse**:
+   - Open **Eclipse IDE for Enterprise Java and Web Developers**.
+   - Go to **File** → **Import...** → **General** → **Existing Projects into Workspace**.
+   - Select root directory: `/Users/somaindra/Desktop/ecommerce-app` (or workspace folder).
+   - Click **Finish**.
 
-Contains 25+ technical interview questions and answers covering:
-- Java Servlets lifecycle and thread safety
-- JDBC Connection Pooling vs `DriverManager`
-- Pessimistic vs Optimistic Locking for flash sale inventory
-- Session Management & Security Filters
-- Database Normalization (3NF) across all 8 tables
+2. **Target Apache Tomcat 10.1**:
+   - Right-click project → **Properties** → **Targeted Runtimes** → check **Apache Tomcat v10.1** → **Apply and Close**.
+
+3. **Run on Server**:
+   - Right-click `ecommerce-app` → **Run As** → **Run on Server**.
+   - Select **Tomcat v10.1 Server at localhost** → Click **Finish**.
+   - Browser opens automatically at: `http://localhost:8080/ecommerce-app/home`.
+
+---
+
+## 🌐 Live Storefront & Candidate Interview Material
+
+- **Live Storefront Demo**: [https://indranil735.github.io/trendvibe-ecommerce/](https://indranil735.github.io/trendvibe-ecommerce/)
+- **Candidate Interview Master Guide (PDF)**: Located on your Desktop at `TrendVibe_Project_Complete_Interview_Master_Guide.pdf`
+
+---
+
+## 📄 License & Attribution
+
+Designed and developed by **Soma Indranil** as a production-grade Java Full Stack Portfolio Project.

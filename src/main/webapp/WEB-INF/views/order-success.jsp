@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="header.jsp" />
 
 <div style="max-width: 680px; margin: 40px auto; background: #fff; border: 1px solid var(--border-color); border-radius: 12px; padding: 40px; text-align: center; box-shadow: var(--shadow-md);">
